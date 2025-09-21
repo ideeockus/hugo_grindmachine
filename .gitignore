@@ -1,1 +1,4 @@
-public/
+.idea
+public
+.DS_Store
+__pycache__

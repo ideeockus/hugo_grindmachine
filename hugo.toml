@@ -1,4 +1,4 @@
-baseURL = 'https://grindmachine.xyz'
+baseURL = 'https://ideeockus.github.io/grindmachine'
 languageCode = 'en-us'
 title = 'Grind Machine'
 theme = 'PaperMod'
@@ -16,3 +16,6 @@ showLatest = true  # Shows latest posts on home
 section = "posts"
 invertFeatured = false
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

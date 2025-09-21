@@ -3,6 +3,7 @@ date = '2025-09-21T08:44:34+03:00'
 title = 'WebAssembly interaction with a Python Host'
 draft = false
 tags = ["wasm", "python", "rust"]
+summary = "Running Web Assembly modules in Python can be tricky, due to weak wasm tools support in python ecosystem"
 +++
 
 WebAssembly (wasm) is a young technology, but a very promising one.
@@ -12,8 +13,8 @@ In this article i'll show how to run wasm modules from python code. When i did i
 The basic wasm workflow consists of two parts: **host** and **guest**.
 
 - **Host** is the environment that runs wasm and controls its execution (e.g. a browser or a runtime like [wasmtime](https://docs.wasmtime.dev/)).
-  
-- **Guest** is the wasm module itself, compiled from Rust, C, Wat, etc). 
+
+- **Guest** is the wasm module itself, compiled from Rust, C, Wat, etc).
 
 Guest can export / import functions. But for function calling only simple types like `bool` / `i32` arguments can be used. (note: actually `bool` arguments is converting to `i32` too)
 
@@ -35,9 +36,9 @@ It defines a higher-level interface for interoperability between languages and r
 This makes wasm much more practical for multi-language ecosystems.
 
 # wit
-The [wasm interface type](https://component-model.bytecodealliance.org/design/wit.html) language is used to define interfaces for interaction between host and guest. 
+The [wasm interface type](https://component-model.bytecodealliance.org/design/wit.html) language is used to define interfaces for interaction between host and guest.
 
-with `wit` we can do e.g 
+with `wit` we can do e.g
 ```wit
 package xyz:machine;
 
@@ -117,7 +118,7 @@ export!(Machine);
 
 # python side (host)
 ## simple argument and return value
-```python 
+```python
 import struct
 from wasmtime import loader, Config, Engine, Store, Module, Linker
 
@@ -206,7 +207,7 @@ print(count)  # 25
 Notice that there is no need to clean up string data written into instance memory from the host side. When `count_symbols` is called, wasm module must manage this memory itself and will free it when it’s no longer needed.
 
 # conclusion
-Despite the fact that wasm is promising for interaction between different subsystems, so far, tool support for languages other than rust may be quite limited. But as discussed before, basically many things are easy to do manually. 
+Despite the fact that wasm is promising for interaction between different subsystems, so far, tool support for languages other than rust may be quite limited. But as discussed before, basically many things are easy to do manually.
 
 Wasm modules also seem promising as a more lightweight replacement of containers.
 
