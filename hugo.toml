@@ -1,0 +1,18 @@
+baseURL = 'https://grindmachine.xyz'
+languageCode = 'en-us'
+title = 'Grind Machine'
+theme = 'PaperMod'
+
+[params]
+description = 'Your blog desc here'
+ShowReadingTime = true  # Optional: shows read time
+ShowPostNavLinks = true  # Optional: prev/next post links
+disableSpecial1stPost = false  # Optional, but helps layout
+disableScrollToTop = true
+ShowAllPostsInIndex = true  # If true, lists all on home (might widen visually)
+
+[params.homepage]
+showLatest = true  # Shows latest posts on home
+section = "posts"
+invertFeatured = false
+
