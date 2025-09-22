@@ -1,4 +1,5 @@
 baseURL = 'https://grindmachine.xyz'
+relativeURLs = true
 languageCode = 'en-us'
 title = 'Grind Machine'
 theme = 'PaperMod'
@@ -23,12 +24,12 @@ invertFeatured = false
   [caches.images]
     dir = ':cacheDir/images'
 
-[menus]
-  [[menus.footer]]
+[menu]
+  [[menu.footer]]
     name = 'Legal'
     pageRef = '/legal'
     weight = 10
-  [[menus.footer]]
+  [[menu.footer]]
     name = 'Privacy'
     pageRef = '/privacy'
     weight = 20
@@ -36,11 +37,11 @@ invertFeatured = false
   #  name = 'Home'
   #  pageRef = '/'
   #  weight = 10
-  [[menus.main]]
+  [[menu.main]]
     name = 'posts'
     pageRef = '/posts'
     weight = 20
-  [[menus.main]]
+  [[menu.main]]
     name = 'x.com'
     url = 'https://x.com/skyfaullt'
     weight = 30
