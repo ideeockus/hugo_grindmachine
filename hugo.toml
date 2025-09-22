@@ -4,18 +4,43 @@ title = 'Grind Machine'
 theme = 'PaperMod'
 
 [params]
-description = 'Your blog desc here'
+description = 'Software engineering is a hustle'
+mainSections = ['posts']
 ShowReadingTime = true  # Optional: shows read time
 ShowPostNavLinks = true  # Optional: prev/next post links
 disableSpecial1stPost = false  # Optional, but helps layout
 disableScrollToTop = true
 ShowAllPostsInIndex = true  # If true, lists all on home (might widen visually)
+defaultTheme = "auto"  # light, dark, or auto
+ShowAllPagesOnHome = false  # PaperMod param to paginate if needed
+paginate = 5  # Limits homepage to 5 posts (built-in Hugo pagination)
 
 [params.homepage]
 showLatest = true  # Shows latest posts on home
-section = "posts"
 invertFeatured = false
 
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[menus]
+  [[menus.footer]]
+    name = 'Legal'
+    pageRef = '/legal'
+    weight = 10
+  [[menus.footer]]
+    name = 'Privacy'
+    pageRef = '/privacy'
+    weight = 20
+  #[[menus.main]]
+  #  name = 'Home'
+  #  pageRef = '/'
+  #  weight = 10
+  [[menus.main]]
+    name = 'posts'
+    pageRef = '/posts'
+    weight = 20
+  [[menus.main]]
+    name = 'x.com'
+    url = 'https://x.com/skyfaullt'
+    weight = 30
